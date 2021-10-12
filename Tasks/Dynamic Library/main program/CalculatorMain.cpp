@@ -1,22 +1,25 @@
-// CalculatorMain.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+//Application program code
 #include <iostream>
-#include "CalculatorDynamic/CalculatorDynamic.h"
+#include "CalculatorDynamic/CalculatorDynamic.h" //Including the dynamic library header file
+
+using namespace std;
 
 int main()
 {  
-    CalculatorD c;
-    std::cout << c.CalculateD(15.1, 5.1, 3) << std::endl;
+    int choice, num1, num2;
+    cout << "Calculator - Dynamic Library\n\n" << endl;
+    cout << "OPTIONS\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n\nEnter your choice:\n" << endl;
+    cin >> choice;
+    if (choice > 4 || choice < 1)
+    {
+        cout << "Invalid choice" << endl;
+        return 1;
+    }
+    cout << "Enter number 1:" << endl;
+    cin >> num1;
+    cout << "Enter number 2:" << endl;
+    cin >> num2;
+
+    cout << "Output:" << endl;
+    cout << Calculate(num1, num2, choice) << std::endl;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
