@@ -1,31 +1,10 @@
 #pragma once
 
-class CalculatorD
-{
-public:
-	static double CalculateD(double num1, double num2, int choice) 
-	{
-		switch (choice)
-		{
-		case 1:
-			return num1 + num2;
-			break;
+#ifdef CALCULATORDYNAMIC_EXPORTS
+#define CALCULATOR_API __declspec(dllexport)
+#else
+#define CALCULATOR_API __declspec(dllimport)
+#endif
 
-		case 2:
-			return num1 - num2;
-			break;
 
-		case 3:
-			return num1 * num2;
-			break;
-
-		case 4:
-			return num1 / num2;
-			break;
-
-		default:
-			return 0.0;
-			break;
-		}
-	}
-};
+extern "C"  CALCULATOR_API double Calculate(double num1, double num2, int choice);
